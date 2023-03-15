@@ -1,18 +1,24 @@
 #include "main.h"
 /**
- * _isalpha - checks for alphabetic character
- * @c: character checked
- * Return: 1 if a letter,lowercase,uppercase and 0 otherwise
+ * _strpbrk - Entry point
+ * @s: input
+ * @accept: input
+ * Return: Always 0 (Success)
  */
-int _isalpha(int c)
+char *_strpbrk(char *s, char *accept)
 {
-        if ((c >= 97 && c <= 122) || (c >= 65 && c <= 92))
-        {
-                return (1);
-        }
-        else
-        {
-                return (0);
-        }
+	int k;
 
+	while (*s)
+	{
+		for (k = 0; accept[k]; k++)
+		{
+		if (*s == accept[k])
+		return (s);
+		}
+	s++;
+	}
+
+return ('\0');
 }
+
